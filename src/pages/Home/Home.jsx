@@ -4,7 +4,7 @@ import {
   Program, Provider, web3
 } from '@project-serum/anchor';
 
-import { OneTimeInitSection, GifList, GifForm }from '../../components';
+import { OneTimeInitSection, MusicList, GifForm }from '../../components';
 import idl from '../../idl.json';
 import kp from '../../keypair.json'
 
@@ -37,14 +37,14 @@ const getProvider = () => {
 
 const Home = ({walletAddress}) => {
     const [inputValue, setInputValue] = useState('');
-    const [gifList, setGifList] = useState([]);
+    const [musicList, setMusicList] = useState([]);
 
     const onInputChange = (event) => {
         const { value } = event.target;
         setInputValue(value);
     };
     
-    const createGifAccount = async () => {
+    const createMusicAccount = async () => {
         try {
           const provider = getProvider();
           const program = new Program(idl, programID, provider);
@@ -57,68 +57,95 @@ const Home = ({walletAddress}) => {
             signers: [baseAccount]
           });
           console.log("Created a new BaseAccount w/ address:", baseAccount.publicKey.toString())
-          await getGifList();
+          await getMusicList();
       
         } catch(error) {
           console.log("Error creating BaseAccount account:", error)
         }
     }
 
-    const getGifList = async() => {
+    const getMusicList = async() => {
         try {
           const provider = getProvider();
           const program = new Program(idl, programID, provider);
           const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
           
-          setGifList(account.gifList)
+          setMusicList(account.musicList)
       
         } catch (error) {
-          setGifList(null);
+          setMusicList(null);
         }
     };
 
-    const sendGif = async () => {
+    const sendMusic = async () => {
         if (inputValue.length === 0) {
           return;
         }
+        
+        console.log('inputValue', inputValue, inputValue.split('/').pop().length !== 22);
 
-        setInputValue('');
-
-        try {
-          const provider = getProvider();
-          const program = new Program(idl, programID, provider);
-      
-          await program.rpc.addGif(inputValue, {
-            accounts: {
-              baseAccount: baseAccount.publicKey,
-              user: provider.wallet.publicKey,
-            },
-          });
-      
-          await getGifList();
-        } catch (error) {
-          console.log("Error sending GIF:", error)
+        if(inputValue.split('/').pop().length !== 22) {
+          alert('Invalid format, it should be this: https://open.spotify.com/track/0U0ldCRmgCqhVvD6ksG63j')
+          setInputValue('');
+        } else {
+          try {
+            const provider = getProvider();
+            const program = new Program(idl, programID, provider);
+        
+            await program.rpc.addMusic(inputValue, {
+              accounts: {
+                baseAccount: baseAccount.publicKey,
+                user: provider.wallet.publicKey,
+              },
+            });
+        
+            setInputValue('');
+  
+            await getMusicList();
+          } catch (error) {
+            console.log("Error sending GIF:", error)
+          }
         }
+
     };
 
+    const resetMusic = async () => {
+      try {
+        console.log("Reseting musics...")
+
+        const provider = getProvider();
+        const program = new Program(idl, programID, provider);
+    
+        await program.rpc.resetAllMusic({
+          accounts: {
+            baseAccount: baseAccount.publicKey
+          },
+        });
+    
+        await getMusicList();
+      } catch (error) {
+        console.log("Error Reseting musics..:", error)
+      }
+    }
 
     useEffect(() => {
         if (walletAddress) {
-            getGifList();
+            getMusicList();
         }
     }, [walletAddress]);
 
-    if (gifList === null) 
-        return (<OneTimeInitSection createGifAccount={createGifAccount}/>);
+    if (musicList === null) 
+        return (<OneTimeInitSection createMusicAccount={createMusicAccount}/>);
       
     return (
         <div className="connected-container">
             <GifForm 
                 inputValue={inputValue} 
                 onInputChange={onInputChange}
-                sendGif={sendGif}
+                sendMusic={sendMusic}
+                resetMusic={resetMusic}
             />
-            <GifList gifList={gifList} />
+            <MusicList musicList={musicList} />
         </div>
   )
 }

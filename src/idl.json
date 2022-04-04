@@ -1,6 +1,6 @@
 {
     "version": "0.1.0",
-    "name": "myepicproject",
+    "name": "blastfm",
     "instructions": [
         {
             "name": "startStuffOff",
@@ -24,7 +24,7 @@
             "args": []
         },
         {
-            "name": "addGif",
+            "name": "addMusic",
             "accounts": [
                 {
                     "name": "baseAccount",
@@ -39,10 +39,21 @@
             ],
             "args": [
                 {
-                    "name": "gifLink",
+                    "name": "musicLink",
                     "type": "string"
                 }
             ]
+        },
+        {
+            "name": "resetAllMusic",
+            "accounts": [
+                {
+                    "name": "baseAccount",
+                    "isMut": true,
+                    "isSigner": false
+                }
+            ],
+            "args": []
         }
     ],
     "accounts": [
@@ -52,11 +63,11 @@
                 "kind": "struct",
                 "fields": [
                     {
-                        "name": "totalGifs",
+                        "name": "totalMusics",
                         "type": "u64"
                     },
                     {
-                        "name": "gifList",
+                        "name": "musicList",
                         "type": {
                             "vec": {
                                 "defined": "ItemStruct"
@@ -74,7 +85,7 @@
                 "kind": "struct",
                 "fields": [
                     {
-                        "name": "gifLink",
+                        "name": "musicLink",
                         "type": "string"
                     },
                     {

@@ -1,7 +1,7 @@
 import GifForm from "./Form";
-import GifList from "./GifList";
+import MusicList from "./MusicList";
 
 export {
     GifForm,
-    GifList,
+    MusicList,
 }
