@@ -4,6 +4,8 @@ Host your favorite track on your wallet easily with Blast.fm 📻
 
 Nothing hard, just paste your favorite tracks' Spotify link and they'll always follow you and your wallet! 
 
+---
+
 ### **Welcome 👋**
 To get started:
 
