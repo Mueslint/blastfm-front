@@ -1,15 +1,18 @@
-# buildspace Solana GIF Portal Project
+# Blast.fm, hosting your favorite music on your wallet!
+
+Host your favorite track on your wallet easily with Blast.fm 📻
+Nothing hard, just paste your favorite tracks' Spotify link and they'll always follow you and your wallet! 
+
+Made from the awesome [buildspace](https://app.buildspace.so) tutorial `Build a Web3 app on Solana with React and Rust`
+
+---
 
 ### **Welcome 👋**
-To get started with this course, clone this repo and follow these commands:
+To get started:
 
 1. Run `npm install` at the root of your directory
 2. Run `npm run start` to start the project
 3. Start coding!
-
-### **What is the .vscode Folder?**
-If you use VSCode to build your app, we included a list of suggested extensions that will help you build this project! Once you open this project in VSCode, you will see a popup asking if you want to download the recommended extensions :).
-
 
 
 ### **Questions?**
