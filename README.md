@@ -2,7 +2,7 @@
 
 <img width="1394" alt="Capture d’écran 2022-04-20 à 23 08 29" src="https://user-images.githubusercontent.com/23119955/164323391-f7b42246-d3f2-4191-921e-bc4b75efef7f.png">
 
-[Host your favorite track on your wallet easily with Blast.fm 📻](https://open.spotify.com/track/2fWP9NTSomnW13tweZ0zbU?si=ac0bfcdd4d664903)
+[Host your favorite track on your wallet easily with Blast.fm 📻](https://solana-blastfm-front.vercel.app/)
 
 ## **Welcome 👋**
 To get started, nothing hard:
