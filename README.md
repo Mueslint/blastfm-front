@@ -1,19 +1,24 @@
 # Blast.fm, hosting your favorite music on your wallet!
 
-Host your favorite track on your wallet easily with Blast.fm 📻
-Nothing hard, just paste your favorite tracks' Spotify link and they'll always follow you and your wallet! 
+<img width="1394" alt="Capture d’écran 2022-04-20 à 23 08 29" src="https://user-images.githubusercontent.com/23119955/164323391-f7b42246-d3f2-4191-921e-bc4b75efef7f.png">
+
+[Host your favorite track on your wallet easily with Blast.fm 📻](https://open.spotify.com/track/2fWP9NTSomnW13tweZ0zbU?si=ac0bfcdd4d664903)
+
+## **Welcome 👋**
+To get started, nothing hard:
+
+1. Open the App
+2. Connect your wallet
+3. Paste your favorite tracks' Spotify link
+4. ???
+5. Profit: They'll always follow you and your wallet!
+
+
+## Key Learnings
+- Phantom wallet API
+- Using Rust to host an on-chain program 🎉 
+- Deploying lifecycle: from local to testnet 💻
+- Understanding Solana API (Program, Accounts, Transactions, etc.)
+- Understanding Solana integration (Provider, Wallet interactions)
 
 Made from the awesome [buildspace](https://app.buildspace.so) tutorial `Build a Web3 app on Solana with React and Rust`
-
----
-
-### **Welcome 👋**
-To get started:
-
-1. Run `npm install` at the root of your directory
-2. Run `npm run start` to start the project
-3. Start coding!
-
-
-### **Questions?**
-Have some questions make sure you head over to your [buildspace Dashboard](https://app.buildspace.so/courses/CObd6d35ce-3394-4bd8-977e-cbee82ae07a3) and link your Discord account so you can get access to helpful channels and your instructor!
