@@ -1,5 +1,4 @@
 # Blast.fm, hosting your favorite music on your wallet!
-React + Solana + Spotify project to host music on its wallet
 
 <img width="1394" alt="Capture d’écran 2022-04-20 à 23 08 29" src="https://user-images.githubusercontent.com/23119955/164323391-f7b42246-d3f2-4191-921e-bc4b75efef7f.png">
 
