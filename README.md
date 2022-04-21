@@ -16,7 +16,7 @@ To get started, nothing hard:
 
 ## Key Learnings
 - Phantom wallet API
-- [Deploying an on-chain Rust program 🎉](https://github.com/Mueslint/solana-blastfm-onchain)
+- [Deploying an on-chain Rust program 🎉 (link to github project)](https://github.com/Mueslint/solana-blastfm-onchain)
 - Deploying lifecycle: from local to testnet 💻
 - Understanding Solana API (Program, Accounts, Transactions, etc.)
 - Understanding Solana integration (Provider, Wallet interactions)
